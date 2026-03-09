@@ -2,14 +2,15 @@ FROM node:20-slim
 
 WORKDIR /app
 
-# Instala dependencias
 COPY package*.json ./
 RUN npm install
 
-# Copia todo el proyecto
+# Fuerza invalidar cache con la fecha del build
+ARG GIT_SHA
+RUN echo "Build: $GIT_SHA"
+
 COPY . .
 
-# Compila cliente + servidor
 RUN npm run build
 
 EXPOSE 5000
