@@ -1,18 +1,17 @@
-FROM python:3.11-slim
-
-RUN apt-get update && apt-get install -y \
-    ffmpeg \
-    libcairo2-dev \
-    libpango1.0-dev \
-    pkg-config \
-    python3-dev \
-    gcc \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN pip install manim flask
+FROM node:20-slim
 
 WORKDIR /app
+
+# Instala dependencias
+COPY package*.json ./
+RUN npm install
+
+# Copia todo el proyecto
 COPY . .
 
+# Compila cliente + servidor
+RUN npm run build
+
 EXPOSE 5000
-CMD ["python", "server.py"]
+
+CMD ["npm", "run", "start"]
