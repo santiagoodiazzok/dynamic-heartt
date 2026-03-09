@@ -16,7 +16,7 @@ class Corazon(Scene):
 
         k_tracker = ValueTracker(0.00)
 
-        titulo = Text("¿Quieres ser mi crush?", font_size=48, color=RED)
+        titulo = Text("Feliz dia de la mujer, HERMOSA", font_size=48, color=RED)
         titulo.move_to(ejes.get_bottom()).shift(DOWN * 0.5)
 
         exp = MathTex(

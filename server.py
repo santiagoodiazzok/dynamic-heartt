@@ -7,7 +7,7 @@ HTML = """
 <!DOCTYPE html>
 <html>
 <head>
-    <title>¿Quieres ser mi crush?</title>
+    <title>Feliz dia de la mujer, HERMOSA</title>
     <style>
         body { background: black; display: flex; flex-direction: column;
                justify-content: center; align-items: center; 
